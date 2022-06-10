@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Open+Sans&display=swap"
+        rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles7.css">
+</head>
+<body>
+    <div class="wrapper">
+      <div class="images">
+        <div class="before-7"></div>
+        <div class="after-7"></div>
+      </div>
+      <div class="slider">
+        <div class="drag-line">
+          <span></span>
+        </div>
+        <input type="range" min="0" max="100" value="50">
+      </div>
+    </div>
+
+    <script>
+      const slider = document.querySelector(".slider input");
+      const img = document.querySelector(".images .after-7");
+      const dragLine = document.querySelector(".slider .drag-line");
+      slider.oninput = ()=>{
+        let sliderVal = slider.value;
+        dragLine.style.left = sliderVal + "%";
+        img.style.width = sliderVal + "%";
+      }
+    </script>
+
+  </body>
+</html>
